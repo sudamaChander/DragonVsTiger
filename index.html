@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ADRIJ SOFTWARE | Dragon Vs Tiger</title>
+    <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+    <style> 
+      #rcorners1 {
+        border-radius: 25px;
+        background: #0066CC;
+        padding: 20px; 
+        width: 920px;
+        height: 607px; 
+        text-align:center;  
+      }
+
+      .p1 {
+        font-family: 'ABeeZee';
+        color: #ffffff;
+        font-size: 28px;
+        font-weight:bold;       
+      }
+      
+      
+      </style>
+  </head>
+  <body style="text-align: center; padding: 0; border: 0; margin: 0;" bgcolor="#F1F8FB">
+    <canvas id="unity-canvas" width=900 height=507 tabindex="-1" style="width: 900px; height: 507px; background: #231F20; border-radius: 25px; "></canvas>
+
+    <!-- <div style="font-family: 'ABeeZee'; background: #0066cc36; width: 100%;"></div>
+      
+      <p style="font-size: 48px; font-weight:bold; color: #0444c6; text-align:left;">DRAGON v/s TIGER</p> 
+        
+    </div> -->
+
+    <script src="Build/build.loader.js"></script>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+
+        var canvas = document.querySelector("#unity-canvas");
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.position = "fixed";
+
+        document.body.style.textAlign = "left";
+      }
+
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/build.data.unityweb",
+        frameworkUrl: "Build/build.framework.js.unityweb",
+        codeUrl: "Build/build.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Andrij Software",
+        productName: "Dragon Vs Tiger",
+        productVersion: "0.1",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>
